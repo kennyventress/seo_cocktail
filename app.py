@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, flash, request
-from forms import RegistrationForm
+#from forms import RegistrationForm
 from flask_behind_proxy import FlaskBehindProxy
 
 # Create the App
@@ -17,7 +17,7 @@ def home():
 
 @app.route('/find')
 def find():
-    """ goes to find cocktail page"""
+    """ goes to find cocktail page """
     return render_template('find.html')
 
 @app.route('/about')
