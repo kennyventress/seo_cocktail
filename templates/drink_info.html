@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drink</title>
+</head>
+<body>
+    <h1>Drink: {{ recipe_dict['name'] }}</h1>
+    <h2>Ingredients:</h2>
+    
+    <ul>
+        {% for ingredient in recipe_dict['ingredients'] %}
+            <li>{{ ingredient }}</li>
+        {% endfor %}
+
+    </ul>
+    
+    <p>Instructions: {{ recipe_dict['instructions'] }}</p>
+
+    <img src="{{ recipe_dict['image_url'] }}" alt= "{{ recipe_dict['name'] Image }}">
+</body>
+</html>

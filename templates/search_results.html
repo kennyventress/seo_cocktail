@@ -1,0 +1,41 @@
+{% extends 'search.html' %}
+
+{% block content %}
+    {{ super() }}  {# Render the extended content from search.html #}
+
+    {% if results %}
+    <h2>Search Results:</h2>
+        <ul>
+            {% for i in results %}
+                <li><a href="{{ url_for('drink_info', drink_name = results[i], recipe_name = results[i]) }}">{{ results[i] }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found for the search query.</p>
+    {% endif %}
+{% endblock %}
+
+
+<!-- this should EXTEND from search...
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drink</title>
+</head>
+<body>
+    <h1>Drink: {{ drink.name }}</h1>
+    <h2>Ingredients:</h2>
+    
+    <ul>
+        {% for ingredient in drink.ingredients %}
+            <li>{{ ingredient.measure }} {{ ingredient.ingredient }}</li>
+        {% endfor %}
+
+    </ul>
+    
+    <p>Instructions: {{ drink.instructions }}</p>
+
+    <img src="{{ drink.image_url }}" alt="Drink Image">
+</body>
+</html>
+-->
