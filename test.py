@@ -11,7 +11,7 @@ data = response.json()  # Convert response content to a dictionary
 all_dicts = data["drinks"]  # Access the "drinks" key in the dictionary
 
 #TESTING:
-lis = get_every_drink_data('vodka')
+lis = get_every_drink_data('Blue Margarita')
 for item in lis:
     print(item)
     print(" ")

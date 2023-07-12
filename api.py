@@ -2,33 +2,7 @@ import requests
 
 API_KEY = 1
 
-#def get_single_drink_data(recipe_info):
-"""
-def get_single_drink_data(drink_name, recipe_name):
 
-     gives us data to be used in drink.html 
-    so we can display it for us to grab later
-    #DRINK = input("Enter a drink: ")  # Prompt the user for input
-    url = f'https://www.thecocktaildb.com/api/json/v1/{API_KEY}/search.php?s={drink_name}'
-    response = requests.get(url)
-    
-    if response.status_code == 200:
-        data = response.json()
-        all_dicts = data['drinks']
-        if all_dicts:
-            for drink_dict in all_dicts:
-                #print(drink_dict['strDrink'])
-                #makes a small dict of ONLY the data we want to display from the API
-                if drink_dict['strDrink'] == recipe_name:
-                    recipe_dict = {
-                        'name': drink_dict['strDrink'],
-                        'instructions': drink_dict['strInstructions'],
-                        'ingredients': get_ingredients(drink_dict),
-                        'image_url': drink_dict['strDrinkThumb']
-                    }
-            return recipe_dict
-    return None 
-"""
 
 def get_every_drink_data(drink_name):
     """ gives us data to be used in drink.html 
@@ -115,3 +89,32 @@ def perform_search(search_query):
         if search_query.lower() in drink.lower():
             search_results.append(drink)
     return search_results
+
+
+#def get_single_drink_data(recipe_info):
+"""
+def get_single_drink_data(drink_name, recipe_name):
+
+     gives us data to be used in drink.html 
+    so we can display it for us to grab later
+    #DRINK = input("Enter a drink: ")  # Prompt the user for input
+    url = f'https://www.thecocktaildb.com/api/json/v1/{API_KEY}/search.php?s={drink_name}'
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        data = response.json()
+        all_dicts = data['drinks']
+        if all_dicts:
+            for drink_dict in all_dicts:
+                #print(drink_dict['strDrink'])
+                #makes a small dict of ONLY the data we want to display from the API
+                if drink_dict['strDrink'] == recipe_name:
+                    recipe_dict = {
+                        'name': drink_dict['strDrink'],
+                        'instructions': drink_dict['strInstructions'],
+                        'ingredients': get_ingredients(drink_dict),
+                        'image_url': drink_dict['strDrinkThumb']
+                    }
+            return recipe_dict
+    return None 
+"""
