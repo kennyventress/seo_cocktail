@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, flash, request
 #from form import RegistrationForm 
 #TODO^^ make my own search form!!!!
-from api import get_drink_data
+from api import get_every_drink_data
 from flask_behind_proxy import FlaskBehindProxy
 
 # Create the App
@@ -13,29 +13,19 @@ def home():
     """ Home Page """
     return render_template('home.html')
 
-#@app.route('/search', methods=['GET', 'POST'])
- #   if request.method == 'POST':
- #       search_query = request.form.get('search_query')
-  #      if search_query:
-  #          return redirect(url_for('search_results', drink_name=search_query))
-  # return render_template('search.html')
-
 @app.route('/search_results', methods=['GET', 'POST'])
 def search_results():
     if request.method == 'POST':
         search_query = request.form.get('search_query')
         if search_query:
             # Perform search based on search_query
-            results = perform_search(search_query)
-            return render_template('search_results.html', results=results)
+            every_drink = get_every_drink_data(search_query)
+            return render_template('search_results.html', every_drink = every_drink)
     return render_template('search_results.html')
 
-@app.route('/search_results/drink_info')
-def drink_info(drink_name, recipe_name):
-    ''' This is only triggered within the search_result.html and creates
-    a usable, unique hyperlink specifique to a certain recipe name'''
-    #TODO is the 'name' a string type when passed to get_drink_data?
-    recipe_dict = get_drink_data(drink_name, recipe_name)
+@app.route('/search_results/drink_info/<recipe_dict>')
+def drink_info(recipe_dict):
+    #recipe_dict = request.args.get('recipe_dict')
     return render_template('drink_info.html', recipe_dict=recipe_dict)
 
 @app.route('/about')
