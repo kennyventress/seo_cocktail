@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Drink</title>
+    <title>Drink: {{ recipe_dict['name'] }}</title>
 </head>
 <body>
-    <h1>Drink: {{ recipe_dict['name'] }}</h1>
+
     <h2>Ingredients:</h2>
     
     <ul>
@@ -16,6 +16,6 @@
     
     <p>Instructions: {{ recipe_dict['instructions'] }}</p>
 
-    <img src="{{ recipe_dict['image_url'] }}" alt= "{{ recipe_dict['name'] Image }}">
+    <img src="{{ recipe_dict['image_url'] }}" alt= "{{ recipe_dict['name'] }}">
 </body>
 </html>

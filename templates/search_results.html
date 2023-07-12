@@ -3,13 +3,12 @@
 {% block content %}
     {{ super() }}  {# Render the extended content from search.html #}
 
-    {% if search_results %}
+    {% if drink_list != None %}
     
     <h2>Search Results:</h2>
-    
         <ul>
-            {% for recipe_dict in search_results %}
-                <li><a href="{{ url_for('drink_info', recipe_dict=recipe_dict) }}">{{ recipe_dict['name'] }}</a></li>
+            {% for recipe_dict in drink_list %}
+                <li><a href="{{ url_for('drink_info', recipe_name=recipe_dict['name']) }}">{{ recipe_dict['name'] }}</a></li>
             {% endfor %}
         </ul>
     {% else %}
