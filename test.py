@@ -1,7 +1,7 @@
 import requests
 #import json
 import pprint
-from api import get_ingredients, get_search_results, get_every_drink_data, get_single_drink_data, perform_search, all_drink_recipes
+from api import get_ingredients, get_search_results, get_every_drink_data, perform_search, all_drink_recipes
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita'
 response = requests.get(url)
@@ -11,14 +11,16 @@ data = response.json()  # Convert response content to a dictionary
 all_dicts = data["drinks"]  # Access the "drinks" key in the dictionary
 
 #TESTING:
-print(get_every_drink_data('vodka'))
-print(" ")
-print(get_single_drink_data('margarita', 'Blue Margarita')) # all data on margs
-print(" ")
-print(get_search_results('margarita')) #the whole list of margs
+lis = get_every_drink_data('vodka')
+for item in lis:
+    print(item)
+    print(" ")
+#print(get_single_drink_data('margarita', 'Blue Margarita')) # all data on margs
+#print(" ")
+#print(get_search_results('margarita')) #the whole list of margs
 #print(get_single_drink_data('Blue Margarita', 'margarita')) # gets the recipe info of ONE drink result
-print(" ")
-print(all_drink_recipes())
+#print(" ")
+#print(all_drink_recipes())
 #print(" ")
 #print(perform_search('margarita'))
 

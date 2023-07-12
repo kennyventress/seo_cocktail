@@ -2,7 +2,6 @@ import requests
 
 API_KEY = 1
 
-
 #def get_single_drink_data(recipe_info):
 """
 def get_single_drink_data(drink_name, recipe_name):

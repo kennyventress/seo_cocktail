@@ -3,10 +3,12 @@
 {% block content %}
     {{ super() }}  {# Render the extended content from search.html #}
 
-    {% if every_drink %}
+    {% if search_results %}
+    
     <h2>Search Results:</h2>
+    
         <ul>
-            {% for recipe_dict in every_drink %}
+            {% for recipe_dict in search_results %}
                 <li><a href="{{ url_for('drink_info', recipe_dict=recipe_dict) }}">{{ recipe_dict['name'] }}</a></li>
             {% endfor %}
         </ul>

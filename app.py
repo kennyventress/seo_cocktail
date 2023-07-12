@@ -13,19 +13,25 @@ def home():
     """ Home Page """
     return render_template('home.html')
 
-@app.route('/search_results', methods=['GET', 'POST'])
-def search_results():
+@app.route('/search', methods=['GET', 'POST'])
+def search():
     if request.method == 'POST':
         search_query = request.form.get('search_query')
         if search_query:
+            #print(search_query)
             # Perform search based on search_query
-            every_drink = get_every_drink_data(search_query)
-            return render_template('search_results.html', every_drink = every_drink)
-    return render_template('search_results.html')
+            search_query = get_every_drink_data(search_query)
+            return redirect(url_for('search_results', search_query=search_query))
+    return render_template('search.html')
+
+@app.route('/search_results/')
+def search_results():
+    search_query = request.args.get('search_query')
+    search_results = get_every_drink_data(search_query)
+    return render_template('search_results.html', search_results=search_results)
 
 @app.route('/search_results/drink_info/<recipe_dict>')
 def drink_info(recipe_dict):
-    #recipe_dict = request.args.get('recipe_dict')
     return render_template('drink_info.html', recipe_dict=recipe_dict)
 
 @app.route('/about')
