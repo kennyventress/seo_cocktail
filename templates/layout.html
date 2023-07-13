@@ -1,28 +1,27 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>The Cocktail App</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <nav class="navbar">
-      <div class="brand-title">Brand Name</div>
-      <a href="#" class="toggle-button">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </a>
-        <div class="navbar-links">
-          <ul>
-            <li><a href="{{ url_for('home') }}">Home</a>
-            <li><a href="{{ url_for('about') }}">About</a>
-            <li><a href="{{ url_for('search') }}">Search</a>
-            <li><a href="{{ url_for('contact') }}">Contact</a>
-          </ul>
-        </div>
-      </nav>    
+<html lang="en" dir="ltr">
 
-    {% block content %}{% endblock %}  <!-- Placeholder for the content of each page -->
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Sip Savvy Navbar!</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale0">
+  </head>
+
+  <body>
+      <nav>
+       <!-- <div class="brand-title">Sip Savvy</div> -->
+            <ul>
+              <h1 class="logo"> LOGO </h1>
+              <div class="items">
+                <li><a href="{{ url_for('home') }}">Home</a>
+                <li><a href="{{ url_for('about') }}">About</a>
+                <li><a href="{{ url_for('search') }}">Search</a>
+                <li><a href="{{ url_for('contact') }}">Contact</a>
+              </div>
+            </ul>
+      </nav>  
+
+      {% block content %}{% endblock %}  <!-- Placeholder for the content of each page -->
+  </body>
 </html>
