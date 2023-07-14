@@ -1,10 +1,15 @@
+
+{% extends 'layout.html' %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Drink: {{ recipe_dict['name'] }}</title>
 </head>
 <body>
-
+    <h1><p>{{ recipe_dict['name'] }} <p></h1>
     <h2>Ingredients:</h2>
     
     <ul>
@@ -13,9 +18,11 @@
         {% endfor %}
 
     </ul>
-    
+<center>
     <p>Instructions: {{ recipe_dict['instructions'] }}</p>
 
     <img src="{{ recipe_dict['image_url'] }}" alt= "{{ recipe_dict['name'] }}">
 </body>
+<center>
 </html>
+{% endblock %}

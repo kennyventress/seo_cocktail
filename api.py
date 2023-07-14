@@ -1,3 +1,4 @@
+
 import requests
 
 API_KEY = 1
@@ -37,6 +38,7 @@ def get_ingredients(drink_dict):
         ingredient = f'{drink_dict[item]}'
         measurement = f'{drink_dict[amount]}'
         ingredients.append(f'{measurement} of {ingredient}')
+
     return ingredients
 
 def get_search_results(drink_name):
