@@ -3,7 +3,6 @@ from wtforms import TextAreaField, RadioField, SubmitField, StringField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 
 class ReviewForm(FlaskForm):
-    review_text = TextAreaField('Cocktail Feedbacks!', validators=[DataRequired()])
-    rating = RadioField('Feedback', validators=[DataRequired()], choices=[(1, '1 Star'), (2, '2 Stars'), (3, '3 Stars'), (4, '4 Stars'), (5,'5 Stars')])
-    #feedback= StringField('FeedBack:',validators=[DataRequired(),Tex)
+    rating = RadioField('How Satisfied were You?', validators=[DataRequired()], choices=[('Very Satisfied'), ('Satisfied'), ('Neutral'), ('Dissatisfied'), ('Very Dissatisfied')])
+    review_text = TextAreaField('Please Describe Your Experience!', validators=[DataRequired()])
     submit = SubmitField('Submit Response!')
