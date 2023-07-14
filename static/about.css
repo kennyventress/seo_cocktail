@@ -1,0 +1,29 @@
+/* CSS for the about page */
+body {
+  background-color: white;
+}
+
+div {
+  width: 600px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+h1 {
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+h2 {
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+p2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+}
