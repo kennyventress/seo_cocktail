@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, flash, request
 #from form import RegistrationForm 
 #TODO^^ make my own search form!!!!
+from form import ReviewForm
 from api import get_every_drink_data
 from flask_behind_proxy import FlaskBehindProxy
 
@@ -66,11 +67,13 @@ def about():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     """ contact page linked """
+    form= ReviewForm()
     if request.method == 'POST':
         # Process the form submission
         flash('Form submitted successfully!')
-        return redirect(url_for('contact'))
-    return render_template('contact.html')
+        return redirect(url_for('home'))
+    return render_template('contact.html',form=form)
 
 if __name__ == '__main__':
+    app.config['SECRET_KEY']='7e1034d50f3269c2654d23ecc715643f'
     app.run(debug=True, host="0.0.0.0")
