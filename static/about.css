@@ -1,30 +1,30 @@
 /* CSS for the about page */
 body {
-  background-color: white;
+  background-color: #FFFFFF;
 }
 
-div {
+.div-1 {
   width: 600px;
-  padding: 10px;
-  border: 5px solid gray;
-  margin: 0;
+  background-color: #FF5757;
+  border: 5px solid grey;
+  padding: 50px;
+  margin: 20px;
 }
-
 h1 {
   color: black;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
 }
 h2 {
   color: black;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
 }
 p {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 20px;
 }
 p2 {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 15px;
 }
