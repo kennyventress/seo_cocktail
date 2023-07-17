@@ -1,4 +1,4 @@
-# Creating Python programs in Codio
+# Sip Savvy Project
 
 ### Make a new file
 Use **File > New File...** or right-click in the file tree to create a new file. You can right-click in the file tree to rename or delete files.
@@ -15,5 +15,8 @@ Use the "Debug Current File" on the far right of the top menu bar to launch the 
 Use the **View > Panels** menu on the top tool bar to segment your screen.
 
 Simply drag the tab of the file or terminal (the part with the name) you want to move into the new panel.
+
+### API Used ###
+https://www.thecocktaildb.com/api.php
 
 
