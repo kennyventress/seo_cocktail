@@ -37,7 +37,21 @@ def get_ingredients(drink_dict):
         amount = f'strMeasure{i}'
         ingredient = f'{drink_dict[item]}'
         measurement = f'{drink_dict[amount]}'
-        ingredients.append(f'{measurement} of {ingredient}')
+
+        # is ingred. or measure == None?
+            #if one is^^ nthen return: just append ONE of them
+
+            # else dont append and Continue
+
+        if measurement == 'None' or ingredient == 'None':
+            if ingredient == 'None' and ingredient != 'None':
+                ingredients.append(ingredient)
+                continue
+            elif ingredient != 'None' and ingredient == 'None':
+                ingredients.append(ingredient)
+                continue 
+        else:
+            ingredients.append(f'{measurement} of {ingredient}')
 
     return ingredients
 
